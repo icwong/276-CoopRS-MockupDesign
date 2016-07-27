@@ -1,0 +1,27 @@
+<h2 class="centered centered-title" > FORGOT YOUR PASSWORD</h2>
+<h4 class="centered"> WE JUST NEED YOUR EMAIL</h4>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 centered-body">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= devise_error_messages! %>
+            <br>
+            <div class="field">
+              <%= f.email_field :email, placeholder: "EMAIL", :class => 'form-control form-group' , :autofocus => true %>
+            </div>
+            
+            <div class="actions">
+              <%= f.submit "Send Me A Password Reset Instructions", class: "btn btn-success btn-block form-group", style: "color: white; font-weight: bold" %>
+            </div>
+            
+            <span class="centered"><%= render "users/shared/links" %></span>
+            <% end %>
+        </div>
+    </div>
+    
+</div>
+
+
+
